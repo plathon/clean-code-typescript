@@ -1,6 +1,6 @@
 # CLEAN CODE and S.O.L.I.D structure with nodejs and typescript
 
-SOLID is an Acronym criated by [Michael Feathers](https://twitter.com/mfeathers) to describe the five
+SOLID is an Acronym created by [Michael Feathers](https://twitter.com/mfeathers) to describe the five
 design patters most discussed these days
 
 - S: Single-responsibility principle
@@ -43,8 +43,8 @@ class Boleto implements PaymentMethod {}
 Examples of principle violation:
 
 - Implements a method that does nothing
-- Throw a inexpected exeption
-- Retorn diferent values
+- Throw a unexpected exception
+- Return different values
 
 **Example:**
 
@@ -65,7 +65,7 @@ const checkout = new Checkout(creditCard); //No Errors
 ```typescript
 class PaymentMethod {}
 
-class EletronicPayment extends PaymentMethod {}
+class ElectronicPayment extends PaymentMethod {}
 class CashPayment extends PaymentMethod {}
 
 class CreditCard extends EletronicPayment {}

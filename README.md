@@ -1,4 +1,4 @@
-#CLEAN CODE and S.O.L.I.D structure with nodejs and typescript
+# CLEAN CODE and S.O.L.I.D structure with nodejs and typescript
 
 SOLID is an Acronym criated by [Michael Feathers](https://twitter.com/mfeathers) to describe the five
 design patters most discussed these days
@@ -9,7 +9,8 @@ design patters most discussed these days
 - I: Interface segregation principle
 - D: Dependency inversion principle
 
-###Single-responsibility principle: A class should only have a single responsibility, that is, only changes to one part of the software's specification
+### Single-responsibility principle: A class should only have a single responsibility, that is, only changes to one part of the software's specification
+
 should be able to affect the specification of the class.
 Ps: the SRP is also applicable for functions and methods.
 
@@ -27,7 +28,7 @@ class UserScore {
 }
 ```
 
-###Open–closed principle: "Software entities should be open for extension, but closed for modification."
+### Open–closed principle: "Software entities should be open for extension, but closed for modification."
 
 **Example:**
 
@@ -37,7 +38,7 @@ class CreditCard implements PaymentMethod {}
 class Boleto implements PaymentMethod {}
 ```
 
-###Liskov substitution principle: "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program."
+### Liskov substitution principle: "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program."
 
 Examples of principle violation:
 
@@ -57,7 +58,7 @@ const creditCard = new CreditCard();
 const checkout = new Checkout(creditCard); //No Errors
 ```
 
-###Interface segregation principle: "Many client-specific interfaces are better than one general-purpose interface."
+### Interface segregation principle: "Many client-specific interfaces are better than one general-purpose interface."
 
 **Example:**
 
@@ -73,4 +74,14 @@ class Boleto extends CashPayment {}
 
 This prevents the "Boleto" class from unnecessarily implementing things like: interest or installments
 
-###Dependency inversion principle: One should "depend upon abstractions, not concretions."
+### Dependency inversion principle: One should "depend upon abstractions, not concretions."
+
+```typescript
+class MasterCard implements IPaymentMethod {}
+class Checkout {
+  constructor(paymentMethod: IPaymentMethod) {}
+}
+
+const creditCard = new MasterCard();
+const checkout = new Checkout(creditCard);
+```

@@ -1,9 +1,8 @@
 import { Router } from "express";
+import { createUserController } from "./controllers";
 
 const routes = Router();
 
-routes.get("/", (req, res) => {
-  res.status(201).json({ response: "ok" });
-});
+routes.get("/", (req, res) => createUserController.exec(req, res));
 
 export { routes };

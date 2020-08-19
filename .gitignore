@@ -115,3 +115,6 @@ dist
 
 #terraform
 .terraform
+
+#orm config
+ormconfig.json

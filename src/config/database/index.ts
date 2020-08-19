@@ -1,13 +1,5 @@
-import { createConnection, Connection } from "typeorm";
+import { createConnection } from "typeorm";
 
-class Database {
-  constructor(private createConnection: any) {}
-  async connection(): Promise<Connection> {
-    const conn = await this.createConnection();
-    return conn;
-  }
-}
-
-const connection = new Database(createConnection).connection();
+const connection = createConnection();
 
 export { connection };

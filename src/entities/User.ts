@@ -1,10 +1,14 @@
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+@Entity("users")
 class User {
-  constructor(
-    private name: string,
-    private email: string,
-    private password: string,
-    id?: string
-  ) {}
+  @PrimaryGeneratedColumn()
+  id?: number;
+  @Column()
+  name: string;
+  @Column()
+  email: string;
+  @Column()
+  password: string;
 }
 
 export { User };

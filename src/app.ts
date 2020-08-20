@@ -1,9 +1,9 @@
-import { Application, RequestHandler } from "express";
+import { Application } from "express";
 
 class App {
   constructor(private httpProvider: Application) {}
 
-  ApplyMiddleware(middleware: RequestHandler): void {
+  ApplyMiddleware(middleware: any): void {
     this.httpProvider.use(middleware);
   }
 

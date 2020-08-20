@@ -3,6 +3,6 @@ import { createUserController } from "./controllers";
 
 const routes = Router();
 
-routes.get("/", createUserController.exec);
+routes.post("/users", createUserController.exec);
 
 export { routes };

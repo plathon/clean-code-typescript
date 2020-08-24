@@ -1,6 +1,6 @@
 import { HttpStatusCode } from "./HttpStatusCode";
 
-export class BaseError extends Error {
+export abstract class BaseError extends Error {
   public readonly name: string;
   public readonly httpCode: HttpStatusCode;
   public readonly isOperational: boolean;
